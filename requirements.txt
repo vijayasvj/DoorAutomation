@@ -10,3 +10,5 @@ face_recognition_models
 Click>=6.0
 dlib>=19.3.0
 scipy>=0.17.0
+os
+face-recognition
