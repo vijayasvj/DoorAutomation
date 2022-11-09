@@ -49,16 +49,16 @@ with body:
     if submitted:
         file_bytes = np.asarray(bytearray(image.read()), dtype=np.uint8)
         image = cv2.imdecode(file_bytes, 1)
-        with open(r'YAML encodings/emp_face_encodings.yml', 'r') as f:
+        with open(r'emp_face_encodings.yml', 'r') as f:
             emp_face_encodings = yaml.load(f.read(), Loader=yaml.Loader)
 
-        with open(r'YAML encodings/emp_face_names.yml', 'r') as f:
+        with open(r'emp_face_names.yml', 'r') as f:
             emp_face_names = yaml.load(f.read(), Loader=yaml.Loader)
 
-        with open(r'YAML encodings/emp_phno.yml', 'r') as f:
+        with open(r'emp_phno.yml', 'r') as f:
             emp_phno = yaml.load(f.read(), Loader=yaml.Loader)
 
-        with open(r'YAML encodings/emp_id.yml', 'r') as f:
+        with open(r'emp_id.yml', 'r') as f:
             emp_id = yaml.load(f.read(), Loader=yaml.Loader)
 
         face_locations = face_recognition.face_locations(image)
@@ -73,16 +73,16 @@ with body:
         os.remove(r'YAML encodings/emp_phno.yml')
         os.remove(r'YAML encodings/emp_id.yml')
 
-        with open(r'YAML encodings/emp_face_encodings.yml', 'w') as f:
+        with open(r'emp_face_encodings.yml', 'w') as f:
             f.write(yaml.dump(emp_face_encodings))
 
-        with open(r'YAML encodings/emp_face_names.yml', 'w') as f:
+        with open(r'emp_face_names.yml', 'w') as f:
             f.write(yaml.dump(emp_face_names))
 
-        with open(r'YAML encodings/emp_phno.yml', 'w') as f:
+        with open(r'emp_phno.yml', 'w') as f:
             f.write(yaml.dump(emp_phno))
 
-        with open(r'YAML encodings/emp_id.yml', 'w') as f:
+        with open(r'emp_id.yml', 'w') as f:
             f.write(yaml.dump(emp_id))
 
 
